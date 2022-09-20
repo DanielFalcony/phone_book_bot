@@ -1,18 +1,13 @@
-from aiogram import Bot, types
-from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
-
-import os
-
-bot = Bot(token=os.getenv('TOKEN'))
-dp = Dispatcher(bot)
+from create_bot import dp
+from handlers import client, other, admin
 
 
-@dp.message_handler()
-async def echo_send(message: types.Message):
-    await message.answer(message.text)
-    # await message.reply(message.text)
-    # await bot.send_message(message.from_user.id, message.text)
+async def on_startup(_):  # Отображает статус бота (отладчик в консоли запуска)
+    print('Бот вышел в онлайн!')
 
 
-executor.start_polling(dp, skip_updates=True)
+client.register_handlers_client(dp)  # Модуль обработки клиентской части
+other.register_handlers_other(dp)  # Модуль обработки мата, содержит пустой хендлер, должен стоять последним
+
+executor.start_polling(dp, skip_updates=True, on_startup=on_startup)
