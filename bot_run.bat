@@ -1,6 +1,6 @@
 @echo off
 
-call %~dp0bot_pack\venv\Scripts\activate
+call %~dp0venv\Scripts\activate
 
 cd %~dp0bot_pack
 
