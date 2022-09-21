@@ -10,7 +10,7 @@ async def command_start(message: types.Message):
                                reply_markup=kb_client)  # обработка команд /start
         await message.delete()
     except BaseException:  # Нужен тест на захват исключения
-        await message.reply('Общение с ботом через ЛС, напишите ему:\nhttps://t.me/Phone_book_PY3052_bot')
+        await message.reply('Общение с ботом через ЛС, напишите ему:\nhttps://t.me/Phone_book_PY3052_bot') # Вывод ответа в чат бота
 
 
 # @dp.message_handler(commands=['help'])
@@ -54,7 +54,7 @@ async def export_contact(message: types.Message):
 
 
 # Создаем диспетчер функций
-def register_handlers_client(dp : Dispatcher):
+def register_handlers_client(dp: Dispatcher):
     dp.register_message_handler(command_start, commands=['start'])
     dp.register_message_handler(command_help, commands=['help'])
     dp.register_message_handler(list_contact, commands=['показать_весь_список_контактов'])

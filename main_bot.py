@@ -8,6 +8,8 @@ async def on_startup(_):  # Отображает статус бота (отла
 
 
 client.register_handlers_client(dp)  # Модуль обработки клиентской части
+admin.register_handlers_admin(dp)  # Модуль обработки Админской части
 other.register_handlers_other(dp)  # Модуль обработки мата, содержит пустой хендлер, должен стоять последним
+
 
 executor.start_polling(dp, skip_updates=True, on_startup=on_startup)
