@@ -15,42 +15,42 @@ async def command_start(message: types.Message):
 
 # @dp.message_handler(commands=['help'])
 async def command_help(message: types.Message):
-    await bot.send_message(message.from_user.id, 'Справка')
+    await bot.send_message(message.from_user.id, 'Это справка по данному боту')
 
 
 # @dp.message_handler(commands=['показать_весь_список_контактов'])
 async def list_contact(message: types.Message):
-    await bot.send_message(message.from_user.id, 'Список контактов')
+    await bot.send_message(message.from_user.id, 'Здесь будет список контактов')
 
 
 # @dp.message_handler(commands=['добавить_контакт'])
 async def add_contact(message: types.Message):
-    await bot.send_message(message.from_user.id, 'Добавить')
+    await bot.send_message(message.from_user.id, 'Здесь будет поиск контактов')
 
 
 # @dp.message_handler(commands=['удалить_контакт'])
 async def del_contact(message: types.Message):
-    await bot.send_message(message.from_user.id, 'Удалить')
+    await bot.send_message(message.from_user.id, 'Здесь можно удалить контак')
 
 
 # @dp.message_handler(commands=['редактировать_контакт'])
 async def rename_contact(message: types.Message):
-    await bot.send_message(message.from_user.id, 'Редактировать')
+    await bot.send_message(message.from_user.id, 'Здесь можно отредактировать контакт')
 
 
 # @dp.message_handler(commands=['найти_контакт'])
 async def search_contact(message: types.Message):
-    await bot.send_message(message.from_user.id, 'Найти')
+    await bot.send_message(message.from_user.id, 'Здесь можно найти контакт')
 
 
 # @dp.message_handler(commands=['импорт_контактов'])
 async def import_contact(message: types.Message):
-    await bot.send_message(message.from_user.id, 'Импорт')
+    await bot.send_message(message.from_user.id, 'Здесь можно импортировать контакт')
 
 
 # @dp.message_handler(commands=['экспорт_контактов'])
 async def export_contact(message: types.Message):
-    await bot.send_message(message.from_user.id, 'Экспорт')
+    await bot.send_message(message.from_user.id, 'Здесь можно экспортировать контакт')
 
 
 # Создаем диспетчер функций
