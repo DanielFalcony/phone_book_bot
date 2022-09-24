@@ -1,6 +1,7 @@
 from aiogram import types, Dispatcher
 from create_bot import dp, bot
 from keyboards import kb_client
+# from Commands.Import import import_any_file as input_file
 
 
 # @dp.message_handler(commands=['start'])
@@ -10,7 +11,8 @@ async def command_start(message: types.Message):
                                reply_markup=kb_client)  # обработка команд /start
         await message.delete()
     except BaseException:  # Нужен тест на захват исключения
-        await message.reply('Общение с ботом через ЛС, напишите ему:\nhttps://t.me/Phone_book_PY3052_bot') # Вывод ответа в чат бота
+        await message.reply(
+            'Общение с ботом через ЛС, напишите ему:\nhttps://t.me/Phone_book_PY3052_bot')  # Вывод ответа в чат бота
 
 
 # @dp.message_handler(commands=['help'])
@@ -43,9 +45,14 @@ async def search_contact(message: types.Message):
     await bot.send_message(message.from_user.id, 'Здесь можно найти контакт')
 
 
-# @dp.message_handler(commands=['импорт_контактов'])
-async def import_contact(message: types.Message):
-    await bot.send_message(message.from_user.id, 'Здесь можно импортировать контакт')
+@dp.message_handler(commands=['импорт_контактов'])
+async def import_contact(message):
+    file_info = bot.get_file(message.document.file_id)
+    downloaded_file = bot.download_file(file_info.file_path)
+    src = (message.document.file_name)
+    with open(src, 'wb') as new_file:
+        new_file.write(downloaded_file)
+        await bot.reply_to(message, "Файл сохранен.")
 
 
 # @dp.message_handler(commands=['экспорт_контактов'])
