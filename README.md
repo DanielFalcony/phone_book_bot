@@ -2,9 +2,9 @@
 
 https://github.com/KonstantinPotekaev - глава. Ответвенный за ввод/вывод данных.
 
-https://github.com/DanielFalcony - Ответвенный за импорты/экспорты данных.
+https://github.com/IiyaMezer - Ответвенный за импорты/экспорты данных.
 
-https://github.com/IiyaMezer - Ответсвенный за визаульную и функциональную часть.
+https://github.com/DanielFalcony - Ответсвенный за визаульную и функциональную часть.
 
 Библиотеки для работы бота:
 1) aiogram
